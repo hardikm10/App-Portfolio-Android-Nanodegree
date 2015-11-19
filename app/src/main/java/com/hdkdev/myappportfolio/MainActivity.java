@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Toast mAppToast;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,49 +41,51 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+
+            //Stop any previous toasts
+            if(mAppToast !=null){
+                mAppToast.cancel();
+            }
+
             switch(v.getId()){
 
                 case R.id.button:
-
-                    Toast.makeText(getApplicationContext(),"This button will launch my Spotify Streamer app!", Toast.LENGTH_SHORT).show();
+                    mAppToast.makeText(getApplicationContext(), "This button will launch my Spotify Streamer app!", Toast.LENGTH_SHORT).show();
 
                     break;
                 case R.id.button2:
 
-                    Toast.makeText(getApplicationContext(),"This button will launch my Scores app!", Toast.LENGTH_SHORT).show();
+                    mAppToast.makeText(getApplicationContext(),"This button will launch my Scores app!", Toast.LENGTH_SHORT).show();
 
                     break;
                 case R.id.button3:
 
-                    Toast.makeText(getApplicationContext(),"This button will launch my Library app!", Toast.LENGTH_SHORT).show();
+                    mAppToast.makeText(getApplicationContext(),"This button will launch my Library app!", Toast.LENGTH_SHORT).show();
 
                     break;
                 case R.id.button4:
 
-                    Toast.makeText(getApplicationContext(),"This button will launch my Build It Bigger app!", Toast.LENGTH_SHORT).show();
+                    mAppToast.makeText(getApplicationContext(),"This button will launch my Build It Bigger app!", Toast.LENGTH_SHORT).show();
 
                     break;
                 case R.id.button5:
 
-                    Toast.makeText(getApplicationContext(),"This button will launch my XYZ Reader app!", Toast.LENGTH_SHORT).show();
+                    mAppToast.makeText(getApplicationContext(),"This button will launch my XYZ Reader app!", Toast.LENGTH_SHORT).show();
 
                     break;
                 case R.id.button6:
                    //Custome Toast Message
                     LayoutInflater inflater = getLayoutInflater();
-
                     View layout = inflater.inflate(R.layout.toast,(ViewGroup) findViewById(R.id.toast_layout_id));
-
                     // set a message
                     TextView text = (TextView) layout.findViewById(R.id.text);
                     text.setText("This button will launch my Capstone app!");
-
                     // Toast configuration
-                    Toast toast = new Toast(getApplicationContext());
-                    toast.setGravity(Gravity.BOTTOM, 0, 0);
-                    toast.setDuration(Toast.LENGTH_LONG);
-                    toast.setView(layout);
-                    toast.show();
+                    mAppToast = new Toast(getApplicationContext());
+                    mAppToast.setGravity(Gravity.BOTTOM, 0, 0);
+                    mAppToast.setDuration(Toast.LENGTH_LONG);
+                    mAppToast.setView(layout);
+                    mAppToast.show();
 
                     break;
             }

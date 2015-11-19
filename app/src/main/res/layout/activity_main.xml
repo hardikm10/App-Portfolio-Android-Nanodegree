@@ -1,4 +1,11 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none" >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -20,65 +27,50 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
+
         android:text="@string/app1"
         android:id="@+id/button"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20sp"
-        android:background="#FFAB40" />
+        style="@style/CodeFont" />
 
     <Button
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
         android:text="@string/app2"
         android:id="@+id/button2"
         android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20sp"
-        android:background="#FFAB40"
+        style="@style/CodeFont"
         />
 
     <Button
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
+        style="@style/CodeFont"
         android:text="@string/app3"
         android:id="@+id/button3"
         android:layout_below="@+id/button2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20sp"
-        android:background="#FFAB40"/>
+       />
 
     <Button
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
+
         android:text="@string/app4"
         android:id="@+id/button4"
         android:layout_below="@+id/button3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20sp"
-        android:background="#FFAB40"/>
+        style="@style/CodeFont"/>
 
     <Button
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
+
         android:text="@string/app5"
         android:id="@+id/button5"
         android:layout_below="@+id/button4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20sp"
-        android:background="#FFAB40"/>
+        style="@style/CodeFont"
+        />
+
 
     <Button
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
+        android:background="#e00b65"
         android:text="@string/app6"
         android:id="@+id/button6"
         android:layout_below="@+id/button5"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20sp"
-        android:background="#e64f5d"
+        style="@style/CodeFont"
 
         />
 </RelativeLayout>
+
+</ScrollView>
